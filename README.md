@@ -1,5 +1,5 @@
 #### 这里是一些个人项目
-#### [个人主页](https://haizai.github.io//)
+#### [个人主页](https://haizai.github.io/)
 安装依赖：
 ``` bash
 npm install
