@@ -1,9 +1,7 @@
 <template>
-	<div>
-		<div class="container">
-      <div class="title">todos</div>
-			<todos></todos>	
-		</div>
+	<div class="container">
+    <div class="title">todos</div>
+		<todos></todos>	
 	</div>
 </template>
 
