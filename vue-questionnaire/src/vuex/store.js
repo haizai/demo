@@ -70,9 +70,7 @@ const defaultNaires = [
   }
 ]
 
-let state = JSON.parse(window.localStorage.getItem(NAME)) || {
-  naires: defaultNaires
-}
+const state = JSON.parse(window.localStorage.getItem(NAME)) || {naires: defaultNaires}
 
 const mutations = {
   //提交答卷
@@ -90,9 +88,6 @@ const store = new Vuex.Store({
   mutations  
 })
 
-store.watch( (state) => {
-  window.localStorage.setItem( NAME, JSON.stringify(state) )
-} )
+store.watch( state => window.localStorage.setItem(NAME, JSON.stringify(state)) )
 
-console.log(store);
 export default store

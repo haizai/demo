@@ -42,6 +42,11 @@ i {
     color: $default-color;
   }
 }
+a {
+  text-decoration: underline;
+  color: #fff;
+  cursor: pointer;
+}
 .warning {
   color: $warning-color;
 }
@@ -66,6 +71,16 @@ i {
   }
   .top-right {
     vertical-align: top;
+    cursor: pointer;
+    &:hover {
+      color: $default-border-color;
+    }
+  }
+  .top-author {
+    float: right;
+    &:hover {
+      color: $default-border-color;
+    }
   }
 }
 .content {

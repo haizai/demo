@@ -191,8 +191,9 @@
         let d = this.testTime()
         if (!d) return
         if (this.naire.ques.length === 0 ) return
-        let warnings = this.$el.getElementsByClassName('warning')
-        if (warnings.length === 0) {
+        let warnings1 = document.getElementsByClassName('new-title')[0].getElementsByClassName('warning')
+        let warnings2 = document.getElementsByClassName('new-que')[0].getElementsByClassName('warning')
+        if (warnings1.length + warnings2.length === 0) {
           this.modalShow = true
         } else {
           document.body.scrollTop = warnings[0].offsetTop - 50
