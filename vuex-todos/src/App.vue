@@ -1,6 +1,11 @@
 <template>
 	<div class="container">
-    <div class="title">todos</div>
+    <div class="title">
+      <p>Vuex Todos</p>
+      <p class="author">
+        <a href="https://github.com/haizai" target="_black">By Haizai</a>
+      </p>
+    </div>
 		<todos></todos>	
 	</div>
 </template>

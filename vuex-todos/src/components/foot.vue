@@ -1,7 +1,9 @@
 <template>
   <div class="foot">
     <i class="foot-del" @click="delSelectedTodos">&times; </i>
-    <span class="foot-info">{{selectedLength}} 项被选中</span>
+    <span class="foot-info">
+      <span class="foot-count">{{selectedLength}}</span> 项被选中
+    </span>
     <span class="foot-visibility">
       <span :class="{'foot-visibility-in': visibility==='all'}" @click="changeVisibility('all')">全部</span>
       <span :class="{'foot-visibility-in': visibility==='selected'}" @click="changeVisibility('selected')">被选中的</span>

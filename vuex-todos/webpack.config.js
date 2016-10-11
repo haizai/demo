@@ -17,10 +17,10 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/
 			},
-			{
-				test:/\.scss$/,
-				loaders: ["style","css","sass"]				
-			},
+      {
+        test: /.css$/,
+        loader: 'style-loader!css-loader'
+      },
       {
         test: /\.vue$/,
         loader: 'vue'
