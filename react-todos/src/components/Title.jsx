@@ -5,7 +5,7 @@ export default class Title extends React.Component {
     return (
       <div className='title'>
         <p>React Todos</p>
-        <p className="author"><a href="https://github.com/haizai" target="_black">Created by Haizai</a></p>
+        <p className="author"><a href="https://github.com/haizai" target="_black">By Haizai</a></p>
       </div>
     )
   }
