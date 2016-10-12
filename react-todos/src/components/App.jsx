@@ -5,26 +5,16 @@ import Head from './Head.jsx';
 import Body from './Body.jsx';
 import Foot from './Foot.jsx';
 
-const NAME = 'react-todos-Haizai';
+const NAME = 'react-todos-Haizai^0.1';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = JSON.parse(window.localStorage.getItem(NAME)) || {
-      todos: [{text: "默认todo1", selected: false}, {text: "默认todo2", selected: true}],
-      visibility: '全部'
+      todos: [{text: "默认todo1", selected: false, key: 0}, {text: "默认todo2", selected: true, key: 1}],
+      visibility: '全部',
+      allKey: 1
     };
-    //以下绑定在Head上
-    this.addTodo          = this.addTodo.bind(this);
-    this.toggleAll        = this.toggleAll.bind(this);
-    //以下绑定在Todo上
-    this.delTodo          = this.delTodo.bind(this);
-    this.toggle           = this.toggle.bind(this);
-    this.tryEdit          = this.tryEdit.bind(this);
-    this.submitEdit       = this.submitEdit.bind(this);
-    //以下绑定在Foot上
-    this.delSelectedTodos = this.delSelectedTodos.bind(this);
-    this.changeVisibility = this.changeVisibility.bind(this);
   }
   componentDidUpdate(prevProps, prevState) {
     window.localStorage.setItem(NAME, JSON.stringify(prevState));
@@ -33,10 +23,12 @@ export default class App extends React.Component {
     if (e.keyCode === 13 && e.target.value.trim() !== '') {
       this.state.todos.push({
         text: e.target.value,
-        selected: false
+        selected: false,
+        key: ++this.state.allKey
       });
       e.target.value = '';
       this.forceUpdate();
+      console.log(this);
     };
   }
   toggleAll() {
@@ -95,22 +87,22 @@ export default class App extends React.Component {
         <Title />
         <Head 
           isAllSelected={isAllSelected}
-          addTodo={this.addTodo}
-          toggleAll={this.toggleAll}
+          addTodo={this.addTodo.bind(this)}
+          toggleAll={this.toggleAll.bind(this)}
         />      
         <Body
           todos={visibilityTodos}
-          delTodo={this.delTodo}
-          toggle={this.toggle}
-          tryEdit={this.tryEdit}
-          submitEdit={this.submitEdit}
-        />
+          delTodo={this.delTodo.bind(this)}
+          toggle={this.toggle.bind(this)}
+          tryEdit={this.tryEdit.bind(this)}
+          submitEdit={this.submitEdit.bind(this)}
+        />   
         <Foot
           footStyle={footStyle}
           selectedCount={selectedCount}
           visibility={this.state.visibility}
-          delSelectedTodos={this.delSelectedTodos}
-          changeVisibility={this.changeVisibility}
+          delSelectedTodos={this.delSelectedTodos.bind(this)}
+          changeVisibility={this.changeVisibility.bind(this)}
         />
       </div>
     );

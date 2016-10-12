@@ -22,7 +22,8 @@ export default class Todo extends React.Component {
     return (
       <div 
         className='body-item' 
-        onMouseEnter={this.todoDelShow} 
+        onMouseEnter={this.todoDelShow}
+        onMouseMove={this.todoDelShow}
         onMouseLeave={this.todoDelHide}>
         <i 
           className={roundClass}

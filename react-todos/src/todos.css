@@ -98,7 +98,6 @@ i:hover {
 .body-label:hover {
   color: #ccc;
 }
-
 .body-label-selected {
   text-decoration: line-through;
   color: #ccc;
@@ -147,4 +146,19 @@ i:hover {
 .foot-visibility > span:hover,
 .foot-visibility-in {
   color: #333;
+}
+
+.fade-enter {
+  opacity: .01;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity .3s ease-in;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave.fade-leave-active{
+  opacity: .01;
+  transition: opacity .3s ease-in;
 }
