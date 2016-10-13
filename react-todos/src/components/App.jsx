@@ -28,7 +28,6 @@ export default class App extends React.Component {
       });
       e.target.value = '';
       this.forceUpdate();
-      console.log(this);
     };
   }
   toggleAll() {
@@ -82,6 +81,7 @@ export default class App extends React.Component {
           case '未被选中的' : return !todo.selected;
         };
       });
+    const bodyMethods = {}
     return (
       <div className='container'>
         <Title />

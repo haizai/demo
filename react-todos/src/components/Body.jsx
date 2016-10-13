@@ -5,6 +5,7 @@ import Todo from './Todo.jsx'
 
 export default class Body extends React.Component {
   render() {
+    const {todos,...methods} = this.props;
     return (
       <div className='body'>
       <ReactCSSTransitionGroup 
@@ -12,20 +13,15 @@ export default class Body extends React.Component {
         transitionEnterTimeout={300} 
         transitionLeaveTimeout={300}>      
       {
-        this.props.todos.map((todo, index)=>{
+        todos.map((todo, index)=>{
           return (
-
               <Todo
+                methods={methods}
                 index={index}
                 text={todo.text} 
                 selected={todo.selected}
                 key={todo.key}
-                delTodo={this.props.delTodo}
-                toggle={this.props.toggle}
-                tryEdit={this.props.tryEdit}
-                submitEdit={this.props.submitEdit}
-              />   
-
+              />
           )
         })
       }
